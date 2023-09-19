@@ -28,7 +28,7 @@ function uniqueNo(arr) {
   
     for (let i = 0; i < arr.length; i++) {
       if (!Number.isInteger(arr[i])) {
-        return "Elements of array must be integer numbers"; // Array element is not an integer.
+        return "Elements of array must be integer numbers and not has square brackets"; // Array element is not an integer.
       }
     }
   
@@ -38,12 +38,20 @@ function uniqueNo(arr) {
 
 
   // Function for get the indices of summation array elements which are = to target
-  function inputIdx(arr, tar) {
+  function inputIdx() {
+    var arr = prompt("\nplease enter input array without square brackets\n");
+    let tar = parseInt(prompt("\nplease enter target\n"));
+    // convert arr from string to array of numbers
+    arr = arr.split(',');
+    arr = arr.map(function (ar) {
+      return parseInt(ar);
+    });
+  
     if (typeof chk(arr, tar) == 'string'){
-        return chk(arr, tar)
+        return alert(chk(arr, tar))
     }
     if (!uniqueNo(arr)){
-        return "The input doesn't have unique numbers"
+        return alert("The input doesn't have unique numbers")
     }
     // Variable to shorten the syntax
     const n = arr.length;
