@@ -39,7 +39,7 @@ function uniqueNo(arr) {
 
   // Function for get the indices of summation array elements which are = to target
   function inputIdx(arr, tar) {
-    if (chk(arr, tar) instanceof String){
+    if (typeof chk(arr, tar) == 'string'){
         return chk(arr, tar)
     }
     if (!uniqueNo(arr)){
